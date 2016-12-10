@@ -1,0 +1,5 @@
+c:\users\p\documents\visual studio 2015\Projects\demoKalkulator\demoKalkulator\bin\Debug\demoKalkulator.exe.config
+c:\users\p\documents\visual studio 2015\Projects\demoKalkulator\demoKalkulator\bin\Debug\demoKalkulator.exe
+c:\users\p\documents\visual studio 2015\Projects\demoKalkulator\demoKalkulator\bin\Debug\demoKalkulator.pdb
+c:\users\p\documents\visual studio 2015\Projects\demoKalkulator\demoKalkulator\obj\Debug\demoKalkulator.exe
+c:\users\p\documents\visual studio 2015\Projects\demoKalkulator\demoKalkulator\obj\Debug\demoKalkulator.pdb
