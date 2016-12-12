@@ -59,7 +59,11 @@ namespace ConsoleApplication8
             WriteLine("\nPara<string> po posortowaniu");
             foreach(Para<string> para in pstr)
                 WriteLine($"\t{para.ToString()}");
+
+
             Read();
+
+
 
         }
     }
