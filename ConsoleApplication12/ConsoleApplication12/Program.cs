@@ -32,6 +32,15 @@ namespace ConsoleApplication12
                     case 2:
                         view.sortTableA();
                         break;
+                    case 3:
+                        view.copyToB();
+                        break;
+                    case 4:
+                        view.resizeTabA();
+                        break;
+                    case 5:
+                        view.removePersonFromA();
+                        break;
                     case 7:
                         view.printTableA();
                         break;

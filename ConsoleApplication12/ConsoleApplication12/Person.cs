@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 namespace ConsoleApplication12
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -50,7 +50,9 @@ namespace ConsoleApplication12
             int result = this.LastName.CompareTo(other.LastName);
             if (result == 0)
                 result = this.FirstName.CompareTo(other.FirstName);
-            return result;
+            if (result == 0)
+                result = this.birthdayDate.CompareTo(other.birthdayDate);
+                return result;
         }
     }
 }

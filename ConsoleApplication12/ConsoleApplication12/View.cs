@@ -11,6 +11,7 @@ namespace ConsoleApplication12
     {
         
         Class1 c;
+
         public View()
         {
             c = new Class1();
@@ -37,7 +38,14 @@ namespace ConsoleApplication12
         {
             
             Console.WriteLine("Enter a name  of  Person: \t");
-            c.addPerson(ReadLine(), ReadLine());
+            string s_temp_First_Name = ReadLine();
+            Console.WriteLine("Enter a Last Name \t");
+            string s_temp_LastName = ReadLine();
+            WriteLine("Enter a birthday in format >> 1988-01-18");
+            string s_temp_BirthDay = ReadLine();
+
+
+            c.addPerson(s_temp_First_Name,s_temp_LastName, s_temp_BirthDay);
         }
         public void printTableA()
         {
@@ -52,6 +60,29 @@ namespace ConsoleApplication12
         {
             c.sort();
         }
+        public void copyToB()
+        {
+            WriteLine("podaj ile elementów  tablicy  chcesz skopiować");
+            int i_table_size = int.Parse(ReadLine());
+            c.copyToPersonsB(i_table_size);
+        }
+        public void resizeTabA()
+        {
+            WriteLine("nowy rozmiar tablicy to: " + c.resizaA(int.Parse(ReadLine())));
+
+        }
+        public void resizeTabB()
+        {
+            WriteLine("nowy rozmiar tablicy to: " + c.resizaB(int.Parse(ReadLine())));
+
+        }
+        public void removePersonFromA()
+        {
+            WriteLine("podaj nazwe elementu: \t ");
+            c.addOrDeletePersonB(int.Parse((ReadLine())));
+            WriteLine("Element usuniety");
+        }
+
 
 
     }
