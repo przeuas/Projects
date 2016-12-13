@@ -16,9 +16,40 @@ namespace ConsoleApplication12
     {
         static void Main(string[] args)
         {
-#if(DEBUG)
-            
-                WriteLine("siemano");
+           
+            View view = new View();
+
+            int userInput = 0;
+            do
+            {
+
+                userInput = view.DisplayMenu();
+                switch(userInput)
+                {
+                    case 1:
+                        view.addItem();
+                        break;
+                    case 2:
+                        view.sortTableA();
+                        break;
+                    case 7:
+                        view.printTableA();
+                        break;
+                    case 8:
+                        view.printTableB();
+                        break;
+
+                    default:
+                        Write("wpisz porawna wartosc");
+                        break;
+
+                }
+                    
+
+            } while (userInput != 9);
+#if (DEBUG)
+
+            WriteLine("siemano");
                 
             Person p = new Person();
             WriteLine("imię\t");
