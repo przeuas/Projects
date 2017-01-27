@@ -1,0 +1,64 @@
+﻿@model WebApplication6.Models.ModelSpektakl
+
+@{
+    ViewBag.Title = "Spektakl";
+}
+
+<h2>Spektakl</h2>
+
+<div>
+    <h4>ModelSpektakl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+
+
+<dt>
+    @Html.DisplayNameFor(model => model.Tytuł)
+
+</dt>
+<dt>
+    @Html.DisplayNameFor(model => model.Lokalizacja)
+</dt>
+
+
+
+<dt>
+    @Html.DisplayNameFor(model => model.Tytuł)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Tytuł)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Auror)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Auror)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Cena)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Cena)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.data)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.data)
+</dd>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDs }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

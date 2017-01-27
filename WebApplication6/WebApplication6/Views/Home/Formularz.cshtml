@@ -1,0 +1,18 @@
+﻿@model WebApplication6.Models.ModelSpektakl
+
+@{
+    ViewBag.Title = "Spektakl";
+}
+
+<h2>Spektakl</h2>
+
+<div>
+    <h4>ModelSpektakl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

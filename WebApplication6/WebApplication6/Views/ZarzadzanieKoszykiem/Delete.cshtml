@@ -1,0 +1,64 @@
+﻿@model WebApplication6.Models.ModelKoszyk
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ModelKoszyk</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.iloscBiletow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iloscBiletow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iloscUlgowych)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iloscUlgowych)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miejsce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miejsce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rzad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rzad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

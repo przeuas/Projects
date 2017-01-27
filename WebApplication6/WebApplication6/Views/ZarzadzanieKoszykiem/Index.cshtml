@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication6.Models.ModelKoszyk>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Repertuar</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Spektakl", "Spektakl", "ZarzadzanieKoszykiem")
+</p>
+<p>
+    @Html.ActionLink("Repertuar", "Repertuar", "ZarzadzanieKoszykiem")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iloscBiletow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iloscUlgowych)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miejsce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rzad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iloscBiletow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iloscUlgowych)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miejsce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rzad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

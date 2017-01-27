@@ -10,6 +10,7 @@ namespace WebApplication6.Controllers
     public class CarsController : Controller
     {
         private CarDBCtxt baza = new CarDBCtxt();
+        private ModelZamowienie zm = new ModelZamowienie();
             
         // GET: Cars
         public ActionResult Index()

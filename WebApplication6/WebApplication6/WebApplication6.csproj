@@ -200,13 +200,24 @@
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ZarzadzanieKoszykiemController.cs" />
+    <Compile Include="Controllers\ZarzadzanieKoszykiem_Controller.cs" />
+    <Compile Include="Controllers\ZarzadzanieUrzytkownikiemController.cs" />
+    <Compile Include="Controllers\ZarzazanieZamowieniemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\ModelKlient.cs" />
+    <Compile Include="Models\ModelFilharmonia.cs" />
+    <Compile Include="Models\ModelSpektakl.cs" />
+    <Compile Include="Models\ModelSprzedawca.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModelRepertuar.cs" />
+    <Compile Include="Models\ModelKoszyk.cs" />
+    <Compile Include="Models\ModelZamowienie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -277,6 +288,30 @@
     <Content Include="Views\Cars2\Details.cshtml" />
     <Content Include="Views\Cars2\Edit.cshtml" />
     <Content Include="Views\Cars2\Index.cshtml" />
+    <Content Include="Views\ZarzazanieZamowieniem\Create.cshtml" />
+    <Content Include="Views\ZarzazanieZamowieniem\Delete.cshtml" />
+    <Content Include="Views\ZarzazanieZamowieniem\Details.cshtml" />
+    <Content Include="Views\ZarzazanieZamowieniem\Edit.cshtml" />
+    <Content Include="Views\ZarzazanieZamowieniem\Index.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Create.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Delete.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Details.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Edit.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Index.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Create.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Delete.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Details.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Edit.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Index.cshtml" />
+    <Content Include="Views\Home\Formularz.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\Spektakl.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem\UtworzSpektakl.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem_\Create.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem_\Delete.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem_\Details.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem_\Edit.cshtml" />
+    <Content Include="Views\ZarzadzanieKoszykiem_\Index.cshtml" />
+    <Content Include="Views\ZarzadzanieUrzytkownikiem\Display.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
