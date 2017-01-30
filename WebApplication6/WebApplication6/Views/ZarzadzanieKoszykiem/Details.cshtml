@@ -1,45 +1,53 @@
-﻿@model WebApplication6.Models.ModelKoszyk
+﻿@model WebApplication6.Models.ModelSpektakl
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayNameFor(model => model.Tytuł)</h2>
 
 <div>
-    <h4>ModelKoszyk</h4>
+    <h4>ModelSpektakl</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.iloscBiletow)
+            @Html.DisplayNameFor(model => model.IDs)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.iloscBiletow)
+            @Html.DisplayFor(model => model.IDs)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.iloscUlgowych)
+            @Html.DisplayNameFor(model => model.Wykonawcy)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.iloscUlgowych)
+            @Html.DisplayFor(model => model.Wykonawcy)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Miejsce)
+            @Html.DisplayNameFor(model => model.Lokalizacja)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Miejsce)
+            @Html.DisplayFor(model => model.Lokalizacja)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Rzad)
+            @Html.DisplayNameFor(model => model.Tytuł)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Rzad)
+            @Html.DisplayFor(model => model.Tytuł)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auror)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auror)
         </dd>
 
         <dt>
@@ -50,9 +58,33 @@
             @Html.DisplayFor(model => model.Cena)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data)
+        </dd>
+
     </dl>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DisplayItem)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.DisplayItem)
+        @Html.ValidationMessageFor(model => model.DisplayItem)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.Image)
+    </div>
+
+    <input type="file" name="file" />
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("DodajDoKoszyka", "DodajDoKoszyka", new { id = Model.Id }) 
+    
+   
+    
 </p>

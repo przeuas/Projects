@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication6.Models.ModelKoszyk>
+﻿@model IEnumerable<WebApplication6.Models.ModelSpektakl>
 
 @{
     ViewBag.Title = "Index";
@@ -8,30 +8,31 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+   
+    
 </p>
-<p>
-    @Html.ActionLink("Spektakl", "Spektakl", "ZarzadzanieKoszykiem")
-</p>
-<p>
-    @Html.ActionLink("Repertuar", "Repertuar", "ZarzadzanieKoszykiem")
-</p>
-
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.iloscBiletow)
+            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.iloscUlgowych)
+            @Html.DisplayNameFor(model => model.Wykonawcy)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Miejsce)
+            @Html.DisplayNameFor(model => model.Lokalizacja)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rzad)
+            @Html.DisplayNameFor(model => model.Tytuł)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auror)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data)
         </th>
         <th></th>
     </tr>
@@ -39,26 +40,36 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.iloscBiletow)
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.ActionLink("Wybierz", "Details", new { id = item.Id }, new { @class = "btn btn-primary", @style = "color:white" })
+            
+
+
+
+           
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.iloscUlgowych)
+            @Html.DisplayFor(modelItem => item.Wykonawcy)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Miejsce)
+            @Html.DisplayFor(modelItem => item.Lokalizacja)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Rzad)
+            @Html.DisplayFor(modelItem => item.Tytuł)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auror)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Cena)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.data)
         </td>
+        
     </tr>
 }
+   
 
 </table>

@@ -1,0 +1,103 @@
+﻿@model WebApplication6.Models.ModelKoszyk
+
+@{
+    ViewBag.Title = "Zamowienie";
+}
+
+
+<h2>Zamowienie</h2>
+
+<div>
+    <h4>ModelKoszyk</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DajSpektakl().Tytuł)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajSpektakl().Tytuł)
+        </dd>
+
+        
+            <dt>
+                @Html.DisplayNameFor(model => model.DajSpektakl().Wykonawcy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DajSpektakl().Wykonawcy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DajSpektakl().data)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DajSpektakl().data)
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DajSpektakl().Lokalizacja)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DajSpektakl().Lokalizacja)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.iloscBiletow)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.iloscBiletow
+           )
+
+            </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iloscUlgowych)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iloscUlgowych)
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sektor)
+        </dt>
+       
+        <dd>
+            @Html.DisplayFor(model => model.sektor)
+                   
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rzad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rzad
+                   )
+
+        </dd>
+        <dt>
+          @Html.DisplayNameFor(model => model.Miejsce)
+                </dt>
+
+        <dd>
+      @Html.DisplayFor(model => model.Miejsce
+                   )
+        </dd>
+
+          
+
+        </dl>
+</div>
+<p>
+    @Html.ActionLink("Dalej", "Login", "Account")
+    @Html.ActionLink("przekierowanie", "przekierowanie")
+    
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

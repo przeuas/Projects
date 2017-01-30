@@ -14,6 +14,20 @@ namespace WebApplication6.Models
         public int ID { get; set; }
         public DateTime data { get; set; }
 
+        private ModelKoszyk modelKoszyk;
+
+
+        public ModelKoszyk DajKoszyk()
+        {
+            return modelKoszyk;
+        }
+
+        public void DodajKoszyk(ModelKoszyk modelKoszyk)
+        {
+            this.modelKoszyk = modelKoszyk;
+        }
+        
+
 
     }
     public class Platnosc 

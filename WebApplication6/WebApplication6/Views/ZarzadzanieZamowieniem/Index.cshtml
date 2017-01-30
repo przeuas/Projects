@@ -1,0 +1,98 @@
+﻿@model WebApplication6.Models.ModelZamowienie
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    <h4>ModelKoszyk</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().DajSpektakl().Tytuł)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().DajSpektakl().Tytuł)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().DajSpektakl().Wykonawcy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().DajSpektakl().Wykonawcy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().DajSpektakl().data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().DajSpektakl().data)
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().DajSpektakl().Lokalizacja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().DajSpektakl().Lokalizacja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().iloscBiletow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().iloscBiletow
+           )
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().iloscUlgowych)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().iloscUlgowych)
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().sektor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().sektor)
+
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().Rzad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().Rzad
+                   )
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DajKoszyk().Miejsce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DajKoszyk().Miejsce)
+                   
+        </dd>
+
+
+
+    </dl>
+</div>

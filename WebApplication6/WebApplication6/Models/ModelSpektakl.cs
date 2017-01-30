@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Drawing;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication6.Models
 {
@@ -12,8 +14,14 @@ namespace WebApplication6.Models
        
         public int IDs { get; set;}
         public string Wykonawcy { get; set; }
-        public string ImgUrl { get; set; }
 
+        public string Picture { get; set; }
+
+        [Column(TypeName = "image")]
+        public byte[] Image { get; set; }
+
+        [Display(Name = "Display profile Image")]
+        public bool DisplayItem { get; set; }
         //public Bitmap Image { get; set; }
 
     }

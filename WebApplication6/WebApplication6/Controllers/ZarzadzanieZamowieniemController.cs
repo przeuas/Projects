@@ -10,121 +10,134 @@ using WebApplication6.Models;
 
 namespace WebApplication6.Controllers
 {
-    public class Cars2Controller : Controller
+    public class ZarzadzanieZamowieniemController : Controller
     {
-        private CarDBCtxt db = new CarDBCtxt();
+        private ModelZamowienieDBCtxt db = new ModelZamowienieDBCtxt();
+        
+        //private ModelKoszykDBCtxt db2 = new ModelKoszykDBCtxt();
 
-        // GET: Cars2
-        public ActionResult Index()
+        public ActionResult Index(ModelKoszyk modelKoszyk)
         {
-            return View(db.Cars.ToList());
-        }
-        [HttpPost]
-        public ActionResult Index(String ModelZnajdz)
-        {
-            var cars = from i in db.Cars
-                       select i;
-            if(!String.IsNullOrEmpty(ModelZnajdz))
-            {
-                cars = from i in db.Cars
-                       where i.Model.Equals(ModelZnajdz)
-                       select i;
-            }
-                
-            return View(cars.ToList());
-        }
+            int id = modelKoszyk.DajSpektakl().Id;
+            ModelSpektaklDBCtxt db = new ModelSpektaklDBCtxt();
+            modelKoszyk.DodajSpektakl(db.Spektakle.Find(id));
 
-        // GET: Cars2/Details/5
+            
+        
+
+            ModelZamowienie modelZamowienie = new ModelZamowienie();
+            modelZamowienie.ID = 1;
+            modelZamowienie.DodajKoszyk(modelKoszyk);
+          //  db.Zamowienia.Add(modelZamowienie);
+
+          //  db.SaveChanges();
+            return View(modelZamowienie);//(db.Zamowienia.ToList());
+
+        }
+        // GET: ZarzadzanieZamowieniem
+       /* public ActionResult Index()
+        {
+            ModelZamowienie mz = new ModelZamowienie();
+            ModelKoszyk m = db2.Koszyki.Find(1);
+            mz.modelKoszyk = m;
+            db.Zamowienia.Add(mz);
+
+
+
+            return View(db.Zamowienia.ToList());
+        }*/
+
+        // GET: ZarzadzanieZamowieniem/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            ModelZamowienie modelZamowienie = db.Zamowienia.Find(id);
+            if (modelZamowienie == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            return View(modelZamowienie);
         }
 
-        // GET: Cars2/Create
+        // GET: ZarzadzanieZamowieniem/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Cars2/Create
+        // POST: ZarzadzanieZamowieniem/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Brand,Model,Price,Bought,Sold")] Car car)
+        public ActionResult Create([Bind(Include = "ID,data")] ModelZamowienie modelZamowienie)
         {
             if (ModelState.IsValid)
             {
-                db.Cars.Add(car);
+                db.Zamowienia.Add(modelZamowienie);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(car);
+            return View(modelZamowienie);
         }
 
-        // GET: Cars2/Edit/5
+        // GET: ZarzadzanieZamowieniem/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            ModelZamowienie modelZamowienie = db.Zamowienia.Find(id);
+            if (modelZamowienie == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            return View(modelZamowienie);
         }
 
-        // POST: Cars2/Edit/5
+        // POST: ZarzadzanieZamowieniem/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Brand,Model,Price,Bought,Sold")] Car car)
+        public ActionResult Edit([Bind(Include = "ID,data")] ModelZamowienie modelZamowienie)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(car).State = EntityState.Modified;
+                db.Entry(modelZamowienie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(car);
+            return View(modelZamowienie);
         }
 
-        // GET: Cars2/Delete/5
+        // GET: ZarzadzanieZamowieniem/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            ModelZamowienie modelZamowienie = db.Zamowienia.Find(id);
+            if (modelZamowienie == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            return View(modelZamowienie);
         }
 
-        // POST: Cars2/Delete/5
+        // POST: ZarzadzanieZamowieniem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Car car = db.Cars.Find(id);
-            db.Cars.Remove(car);
+            ModelZamowienie modelZamowienie = db.Zamowienia.Find(id);
+            db.Zamowienia.Remove(modelZamowienie);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -9,6 +9,8 @@ namespace WebApplication6.Models
 {
     public class ModelKoszyk
     {
+        
+        
 
         public int Id { get; set; }
         public int iloscBiletow { get; set; }
@@ -20,6 +22,17 @@ namespace WebApplication6.Models
 
         public int Rzad { get; set; }
         public double Cena { get; set; }
+
+        public void DodajSpektakl(ModelSpektakl modelSpektakl)
+        {
+            this.modelSpektakl = modelSpektakl;
+        }
+        public ModelSpektakl DajSpektakl()
+        {
+            return modelSpektakl;
+        }
+
+        private ModelSpektakl modelSpektakl;
 
     }
     
